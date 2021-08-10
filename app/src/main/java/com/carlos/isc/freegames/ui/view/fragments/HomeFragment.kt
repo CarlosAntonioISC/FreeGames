@@ -6,16 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.carlos.isc.freegames.R
+import com.carlos.isc.freegames.databinding.FragmentHomeBinding
+import com.carlos.isc.freegames.ui.view.base.BaseFragment
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    override fun setupFragmentView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        mBinding = FragmentHomeBinding.inflate(inflater, container, false)
+        return mBinding.root
     }
 
+    override fun initElements() {
+        mBinding.tvHola.text = "Holaa"
+    }
 }
