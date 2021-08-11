@@ -1,5 +1,5 @@
 package com.carlos.isc.freegames.domain.converters
 
-interface FromResponse<Response, Model> {
+interface FromResponseConverter<Response, Model> {
     fun fromResponse(response: Response): Model
 }

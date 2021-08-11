@@ -5,8 +5,8 @@ import com.carlos.isc.freegames.domain.io.response.GameResponse
 import com.carlos.isc.freegames.domain.models.GameModel
 
 
-object GameConverter: FromResponse<GameResponse, GameModel>,
-    FromListConverter<GameResponse, GameModel> {
+object GameResponseConverterConverter: FromResponseConverter<GameResponse, GameModel>,
+    FromListResponseConverter<GameResponse, GameModel> {
 
     override fun fromResponse(response: GameResponse): GameModel {
         val platform = when (response.genre) {

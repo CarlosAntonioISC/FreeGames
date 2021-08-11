@@ -7,8 +7,13 @@ import com.carlos.isc.freegames.ui.view.base.BaseViewHolder
 
 class GameViewHolder(view: View): BaseViewHolder<GameModel>(view) {
 
-    private val  binding = ItemGameBinding.bind(view)
+    private val binding = ItemGameBinding.bind(view)
 
     override fun onBind(item: GameModel) {
+        with(binding) {
+            ivGameTitle.text = item.title
+            tvGameGenre.text = item.genre
+            ivGameDescription.text = item.short_description
+        }
     }
 }
