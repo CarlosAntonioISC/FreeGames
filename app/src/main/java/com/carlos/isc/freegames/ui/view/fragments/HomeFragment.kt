@@ -8,8 +8,11 @@ import android.view.ViewGroup
 import com.carlos.isc.freegames.R
 import com.carlos.isc.freegames.databinding.FragmentHomeBinding
 import com.carlos.isc.freegames.ui.view.base.BaseFragment
+import com.carlos.isc.freegames.ui.view.viewHelpers.ViewHelperHomeFragment
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+
+    private lateinit var mViewHelper: ViewHelperHomeFragment
 
     override fun setupFragmentView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         mBinding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -17,6 +20,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     override fun initElements() {
-        mBinding.tvHola.text = "Holaa"
+        mViewHelper = ViewHelperHomeFragment(mBinding)
     }
 }
