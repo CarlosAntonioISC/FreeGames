@@ -1,9 +1,8 @@
-package com.carlos.isc.freegames.domain.repository
+package com.carlos.isc.freegames.data.remote.game
 
 import com.carlos.isc.freegames.domain.models.GameModel
 
-interface GameRepository {
-
+interface GameRemoteDataSource {
     suspend fun getLiveGamesList(): List<GameModel>
-
 }
+
