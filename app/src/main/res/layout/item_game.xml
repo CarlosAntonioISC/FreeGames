@@ -1,15 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    android:layout_marginBottom="20dp"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/tvAA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="aa"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@color/blackCard"
+           android:layout_gravity="center_horizontal"
+           android:paddingBottom="10dp"
+           >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+           <ImageView
+               android:id="@+id/ivGameThumbnail"
+               android:layout_width="365dp"
+               android:layout_height="206dp"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               tools:src="@drawable/thumbnail" />
+
+           <TextView
+               android:id="@+id/ivGameTitle"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/ivGameThumbnail"
+               android:layout_marginStart="20dp"
+               android:layout_marginTop="10dp"
+               android:textSize="24sp"
+               android:textColor="@color/gray"
+               tools:text="Dauntless" />
+
+           <TextView
+               android:id="@+id/ivGameDescription"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp"
+               android:textColor="@color/gray2"
+               android:layout_marginEnd="20dp"
+               android:textSize="17sp"
+               app:layout_constraintStart_toStartOf="@+id/ivGameTitle"
+               app:layout_constraintTop_toBottomOf="@id/ivGameTitle"
+               app:layout_constraintEnd_toEndOf="parent"
+               tools:text="A free-to-play, co-op action RPG with gameplay similar to Monster Hunter." />
+
+           <TextView
+               android:id="@+id/textView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/background_btn_free"
+               android:paddingHorizontal="10dp"
+               android:paddingVertical="5dp"
+               android:textColor="@color/white"
+               android:textSize="12sp"
+               android:textStyle="bold"
+               app:layout_constraintBottom_toBottomOf="@+id/ivGameTitle"
+               app:layout_constraintEnd_toEndOf="@+id/ivGameDescription"
+               app:layout_constraintTop_toTopOf="@+id/ivGameTitle"
+               tools:text="FREE" />
+
+           <TextView
+               android:id="@+id/tvGameGenre"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               tools:text="MMORPG"
+               android:textSize="12sp"
+               android:textColor="@color/blackCard"
+               android:background="@drawable/background_btn_genre"
+               android:paddingHorizontal="10dp"
+               android:paddingVertical="5dp"
+               android:textStyle="bold"
+               android:layout_marginEnd="10dp"
+               android:layout_marginTop="10dp"
+               app:layout_constraintEnd_toStartOf="@+id/ivGamePlatform"
+               app:layout_constraintTop_toBottomOf="@+id/ivGameDescription" />
+
+           <ImageView
+               android:id="@+id/ivGamePlatform"
+               android:layout_width="20dp"
+               android:layout_height="20dp"
+               android:background="@drawable/ic_web"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="@+id/ivGameDescription"
+               app:layout_constraintTop_toTopOf="@+id/tvGameGenre" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

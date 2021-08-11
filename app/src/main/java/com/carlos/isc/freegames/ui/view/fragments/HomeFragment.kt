@@ -5,9 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.carlos.isc.freegames.R
 import com.carlos.isc.freegames.databinding.FragmentHomeBinding
+import com.carlos.isc.freegames.domain.models.Game
 import com.carlos.isc.freegames.ui.view.base.BaseFragment
+import com.carlos.isc.freegames.ui.view.recyclers.GameAdapter
 import com.carlos.isc.freegames.ui.view.viewHelpers.ViewHelperHomeFragment
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
@@ -21,5 +25,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun initElements() {
         mViewHelper = ViewHelperHomeFragment(mBinding)
+
+        val adapter = GameAdapter()
+        adapter.updateData(mutableListOf(Game("gears"), Game("fifa"), Game("halo")))
+
+        mBinding.recycler.layoutManager = LinearLayoutManager(mContext)
+        mBinding.recycler.adapter = adapter
+        mBinding.recycler.setHasFixedSize(true)
     }
 }

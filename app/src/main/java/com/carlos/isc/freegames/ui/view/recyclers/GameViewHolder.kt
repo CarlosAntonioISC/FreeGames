@@ -10,6 +10,5 @@ class GameViewHolder(view: View): BaseViewHolder<Game>(view) {
     private val  binding = ItemGameBinding.bind(view)
 
     override fun onBind(item: Game) {
-
     }
 }
