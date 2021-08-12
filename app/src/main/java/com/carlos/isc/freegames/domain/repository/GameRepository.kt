@@ -1,9 +1,0 @@
-package com.carlos.isc.freegames.domain.repository
-
-import com.carlos.isc.freegames.domain.models.GameModel
-
-interface GameRepository {
-
-    suspend fun getLiveGamesList(): List<GameModel>
-
-}

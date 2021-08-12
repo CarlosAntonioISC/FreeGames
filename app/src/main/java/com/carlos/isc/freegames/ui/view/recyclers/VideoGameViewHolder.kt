@@ -6,15 +6,15 @@ import com.bumptech.glide.Glide
 import com.carlos.isc.freegames.R
 import com.carlos.isc.freegames.databinding.ItemGameBinding
 import com.carlos.isc.freegames.domain.enum.EnumPlatform
-import com.carlos.isc.freegames.domain.models.GameModel
+import com.carlos.isc.freegames.domain.models.VideoGameModel
 import com.carlos.isc.freegames.ui.view.base.BaseViewHolder
 import com.carlos.isc.freegames.ui.view.interfaces.OnClickItem
 
-class GameViewHolder(val view: View): BaseViewHolder<GameModel>(view) {
+class VideoGameViewHolder(val view: View): BaseViewHolder<VideoGameModel>(view) {
 
     private val binding = ItemGameBinding.bind(view)
 
-    override fun onBind(item: GameModel, listener: OnClickItem<GameModel>) {
+    override fun onBind(item: VideoGameModel, listener: OnClickItem<VideoGameModel>) {
         with(binding) {
 
             ivGameTitle.text       = item.title

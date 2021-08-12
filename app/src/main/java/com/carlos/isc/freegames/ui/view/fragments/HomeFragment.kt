@@ -1,7 +1,6 @@
 package com.carlos.isc.freegames.ui.view.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.carlos.isc.freegames.R
 import com.carlos.isc.freegames.databinding.FragmentHomeBinding
 import com.carlos.isc.freegames.domain.core.Result
-import com.carlos.isc.freegames.domain.models.GameModel
+import com.carlos.isc.freegames.domain.models.VideoGameModel
 import com.carlos.isc.freegames.ui.view.base.BaseFragment
 import com.carlos.isc.freegames.ui.view.interfaces.OnClickItem
-import com.carlos.isc.freegames.ui.view.recyclers.GameAdapter
+import com.carlos.isc.freegames.ui.view.recyclers.VideoGameAdapter
 import com.carlos.isc.freegames.ui.view.viewHelpers.ViewHelperHomeFragment
 import com.carlos.isc.freegames.utils.hide
 import com.carlos.isc.freegames.utils.show
@@ -22,7 +21,7 @@ import com.carlos.isc.freegames.viewModel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnClickItem<GameModel> {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnClickItem<VideoGameModel> {
 
     private lateinit var mViewHelper: ViewHelperHomeFragment
     private val viewModel: HomeViewModel by viewModels()
@@ -35,7 +34,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnClickItem<GameModel>
     override fun initElements() {
         mViewHelper = ViewHelperHomeFragment(mBinding)
 
-        val adapter = GameAdapter(this)
+        val adapter = VideoGameAdapter(this)
 
         mBinding.recycler.layoutManager = LinearLayoutManager(mContext)
         mBinding.recycler.adapter = adapter
@@ -54,7 +53,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnClickItem<GameModel>
         })
     }
 
-    override fun onClickItem(item: GameModel) {
+    override fun onClickItem(item: VideoGameModel) {
        findNavController().navigate(R.id.action_homeFragment_to_videoGameFragment)
     }
 }

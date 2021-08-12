@@ -2,7 +2,7 @@ package com.carlos.isc.freegames.domain.io.response
 
 import com.google.gson.annotations.SerializedName
 
-class GameResponse(
+class VideoGameResponse(
     @SerializedName("id") val id : Int,
     @SerializedName("title") val title : String,
     @SerializedName("thumbnail") val thumbnail : String,

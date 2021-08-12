@@ -1,9 +1,9 @@
 package com.carlos.isc.freegames.di
 
-import com.carlos.isc.freegames.data.remote.game.GameRemoteDataSource
-import com.carlos.isc.freegames.data.remote.game.GameRemoteDataSourceImpl
-import com.carlos.isc.freegames.domain.repository.GameRepository
-import com.carlos.isc.freegames.domain.repository.GameRepositoryImpl
+import com.carlos.isc.freegames.data.remote.game.VideoGameRemoteDataSource
+import com.carlos.isc.freegames.data.remote.game.VideoGameRemoteDataSourceImpl
+import com.carlos.isc.freegames.domain.repository.VideoGameRepository
+import com.carlos.isc.freegames.domain.repository.VideoGameRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -14,8 +14,8 @@ import dagger.hilt.android.components.ActivityRetainedComponent
 abstract class ContractsModule() {
 
     @Binds
-    abstract fun bindGameRepo(repo: GameRepositoryImpl): GameRepository
+    abstract fun bindVideoGameRepo(repo: VideoGameRepositoryImpl): VideoGameRepository
 
     @Binds
-    abstract fun bindGameRemoteDataSource(remoteDataSource: GameRemoteDataSourceImpl): GameRemoteDataSource
+    abstract fun bindVideoGameRemoteDataSource(remoteDataSource: VideoGameRemoteDataSourceImpl): VideoGameRemoteDataSource
 }
