@@ -9,7 +9,7 @@ object GameResponseConverterConverter: FromResponseConverter<GameResponse, GameM
     FromListResponseConverter<GameResponse, GameModel> {
 
     override fun fromResponse(response: GameResponse): GameModel {
-        val platform = when (response.genre) {
+        val platform = when (response.platform) {
             "PC (Windows)" -> EnumPlatform.PC
             "Web Browser" -> EnumPlatform.BROWSER
             "PC (Windows), Web Browser" -> EnumPlatform.ALL
