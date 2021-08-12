@@ -2,7 +2,7 @@ package com.carlos.isc.freegames.domain.models
 
 import com.carlos.isc.freegames.domain.enum.EnumPlatform
 
-class VideoGameModel(
+data class VideoGameModel(
     val id: String,
     val title: String,
     val thumbnail: String,

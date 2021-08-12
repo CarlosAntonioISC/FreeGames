@@ -10,12 +10,23 @@ import java.lang.Exception
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(repo: VideoGameRepository): ViewModel() {
+class HomeViewModel @Inject constructor(val repo: VideoGameRepository): ViewModel() {
 
     val liveGamesList = liveData(Dispatchers.IO) {
         emit(Result.Loading())
         try {
             emit(Result.Success(repo.getLiveGamesList()))
+        }catch (e: Exception){
+            emit(Result.Failure(e))
+        }
+    }
+
+
+
+    fun getDetailVideoGame(idGame: String) = liveData(Dispatchers.IO) {
+        emit(Result.Loading())
+        try {
+            emit(Result.Success(repo.getDetailVideoGame(idGame)))
         }catch (e: Exception){
             emit(Result.Failure(e))
         }
