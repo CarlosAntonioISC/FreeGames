@@ -33,12 +33,8 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id) {
-                R.id.videoGameFragment -> {
-                    binding.toolbar.hide()
-                }
-                else ->{
-                    binding.toolbar.show()
-                }
+                R.id.videoGameFragment -> { binding.toolbar.hide() }
+                else ->{ binding.toolbar.show() }
             }
         }
 

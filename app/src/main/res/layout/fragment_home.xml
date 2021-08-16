@@ -22,7 +22,7 @@
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="@dimen/fg_20dp"
         app:lottie_rawRes="@raw/loader"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
