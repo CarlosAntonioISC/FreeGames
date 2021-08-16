@@ -3,9 +3,13 @@ package com.carlos.isc.freegames
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.carlos.isc.freegames.databinding.ActivityMainBinding
+import com.carlos.isc.freegames.databinding.FragmentVideoGameBinding
+import com.carlos.isc.freegames.utils.hide
+import com.carlos.isc.freegames.utils.show
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,6 +30,18 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         setupActionBarWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when(destination.id) {
+                R.id.videoGameFragment -> {
+                    binding.toolbar.hide()
+                }
+                else ->{
+                    binding.toolbar.show()
+                }
+            }
+        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

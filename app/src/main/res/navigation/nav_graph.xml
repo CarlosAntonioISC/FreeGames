@@ -18,5 +18,9 @@
         android:id="@+id/videoGameFragment"
         android:name="com.carlos.isc.freegames.ui.view.fragments.VideoGameFragment"
         android:label="fragment_video_game"
-        tools:layout="@layout/fragment_video_game" />
+        tools:layout="@layout/fragment_video_game" >
+        <argument
+            android:name="idGame"
+            app:argType="string" />
+    </fragment>
 </navigation>

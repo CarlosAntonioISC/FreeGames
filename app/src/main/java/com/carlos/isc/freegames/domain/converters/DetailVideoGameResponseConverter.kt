@@ -9,9 +9,8 @@ object DetailVideoGameResponseConverter :
     override fun fromResponse(response: DetailVideoGameResponse?): DetailVideoGameModel {
 
         val platform = when (response?.platform) {
-            "PC (Windows)" -> EnumPlatform.PC
+            "Windows" -> EnumPlatform.PC
             "Web Browser" -> EnumPlatform.BROWSER
-            "PC (Windows), Web Browser" -> EnumPlatform.ALL
             else -> EnumPlatform.ALL
         }
 

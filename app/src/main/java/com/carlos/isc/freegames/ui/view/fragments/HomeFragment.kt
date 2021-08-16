@@ -55,6 +55,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), OnClickItem<VideoGameM
     }
 
     override fun onClickItem(item: VideoGameModel) {
-       findNavController().navigate(R.id.action_homeFragment_to_videoGameFragment)
+        val action = HomeFragmentDirections.actionHomeFragmentToVideoGameFragment(item.id)
+       findNavController().navigate(action)
     }
 }

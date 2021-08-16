@@ -10,6 +10,8 @@
 
     <color name="blackCard">#32383E</color>
     <color name="backgroundColor">#2A2E33</color>
+    <color name="backgroundColor1">#9B2A2E33</color>
+    <color name="backgroundColor2">#D82A2E33</color>
     <color name="gray">#BBBABA</color>
     <color name="gray2">#989797</color>
     <color name="blue">#3EA9E1</color>

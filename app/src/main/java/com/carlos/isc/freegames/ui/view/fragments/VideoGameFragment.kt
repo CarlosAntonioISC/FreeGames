@@ -1,21 +1,28 @@
 package com.carlos.isc.freegames.ui.view.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.navArgs
 import com.carlos.isc.freegames.databinding.FragmentVideoGameBinding
 import com.carlos.isc.freegames.domain.core.Result
 import com.carlos.isc.freegames.ui.view.base.BaseFragment
+import com.carlos.isc.freegames.ui.view.viewHelpers.ViewHelperVideoGameFragment
 import com.carlos.isc.freegames.utils.hide
 import com.carlos.isc.freegames.utils.show
 import com.carlos.isc.freegames.viewModel.HomeViewModel
+import org.imaginativeworld.whynotimagecarousel.ImageCarousel
 
-class VideoGameFragment : BaseFragment<FragmentVideoGameBinding>() {
+class VideoGameFragment : BaseFragment<FragmentVideoGameBinding>(), ViewHelperVideoGameFragment.Listener {
 
+    private lateinit var mViewHelper: ViewHelperVideoGameFragment
     private val viewModel: HomeViewModel by activityViewModels()
+    private val args: VideoGameFragmentArgs by navArgs()
+
+    private lateinit var idGame: String
+
 
 
     override fun setupFragmentView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -24,16 +31,31 @@ class VideoGameFragment : BaseFragment<FragmentVideoGameBinding>() {
     }
 
     override fun initElements() {
-        viewModel.getDetailVideoGame("457").observe(viewLifecycleOwner, {
-            when(it) {
+        mViewHelper = ViewHelperVideoGameFragment(mBinding, mContext, this)
+        idGame = args.idGame
+        loadData()
+    }
+
+    private fun loadData() {
+        viewModel.getDetailVideoGame(idGame).observe(viewLifecycleOwner, {
+            when (it) {
+                is Result.Loading -> { mBinding.loader.show() }
                 is Result.Success -> {
-                    Log.d("carloss", "sucess $it")
+                    mBinding.loader.hide()
+                    mViewHelper.loadData(it.data)
                 }
-                else -> {
-                    Log.d("carloss", "error $it")
-                }
+                is Result.Failure -> { mBinding.loader.hide() }
             }
         })
+    }
 
+    override fun addLifeCycleToImageCarousel(imageCarousel: ImageCarousel) {
+        imageCarousel.registerLifecycle(lifecycle)
+    }
+
+    override fun startActivityURL(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        startActivity(intent)
     }
 }

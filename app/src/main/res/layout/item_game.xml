@@ -32,7 +32,7 @@
                 tools:src="@drawable/thumbnail" />
 
             <TextView
-                android:id="@+id/ivGameTitle"
+                android:id="@+id/tvGameTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
@@ -47,15 +47,15 @@
                 tools:text="Dauntles" />
 
             <TextView
-                android:id="@+id/ivGameDescription"
+                android:id="@+id/tvGameDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gray2"
                 android:textSize="17sp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="@id/tvFree"
-                app:layout_constraintStart_toStartOf="@+id/ivGameTitle"
-                app:layout_constraintTop_toBottomOf="@+id/ivGameTitle"
+                app:layout_constraintStart_toStartOf="@+id/tvGameTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvGameTitle"
                 tools:text="A free-to-play, cA free-to-play, co-op action RPG w Huntero-op action RPG w Hunter."
                 android:ellipsize="end"
                 android:maxLines="3"/>
@@ -71,9 +71,9 @@
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/ivGameTitle"
+                app:layout_constraintBottom_toBottomOf="@+id/tvGameTitle"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/ivGameTitle"
+                app:layout_constraintTop_toTopOf="@+id/tvGameTitle"
                 android:text="FREE" />
 
             <TextView
@@ -90,7 +90,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toStartOf="@+id/ivGamePlatform"
-                app:layout_constraintTop_toBottomOf="@+id/ivGameDescription" />
+                app:layout_constraintTop_toBottomOf="@+id/tvGameDescription" />
 
             <ImageView
                 android:id="@+id/ivGamePlatform"
@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 tools:background="@drawable/ic_pc"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/ivGameDescription"
+                app:layout_constraintEnd_toEndOf="@+id/tvGameDescription"
                 app:layout_constraintTop_toTopOf="@+id/tvGameGenre" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

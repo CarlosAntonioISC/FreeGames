@@ -17,9 +17,9 @@ class VideoGameViewHolder(val view: View): BaseViewHolder<VideoGameModel>(view) 
     override fun onBind(item: VideoGameModel, listener: OnClickItem<VideoGameModel>) {
         with(binding) {
 
-            ivGameTitle.text       = item.title
+            tvGameTitle.text       = item.title
             tvGameGenre.text       = item.genre
-            ivGameDescription.text = item.short_description
+            tvGameDescription.text = item.short_description
 
             Glide.with(mContext).load(item.thumbnail).centerCrop().into(binding.ivGameThumbnail)
 
