@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint
+import tech.carlosktx.freegames.ui.home.HomeScreen
 import tech.carlosktx.freegames.ui.home.HomeViewModel
 import tech.carlosktx.freegames.ui.theme.FreeGamesTheme
 
@@ -28,34 +29,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             FreeGamesTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
                     val state = viewModel.uiState.collectAsStateWithLifecycle()
-                    Log.d("freeGames", "$state")
+                    HomeScreen(state.value) {}
 
-                    Greeting("Android")
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    FreeGamesTheme {
-        Greeting("Android")
     }
 }
