@@ -5,4 +5,6 @@ import tech.carlosktx.freegames.domain.model.Game
 
 interface GamesRepository {
     fun getPopularGames(): Flow<List<Game>>
+    fun getGamesById(gamesId: List<Int>): Flow<List<Game>>
+
 }

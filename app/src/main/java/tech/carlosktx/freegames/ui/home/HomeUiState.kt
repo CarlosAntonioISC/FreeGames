@@ -4,5 +4,6 @@ import tech.carlosktx.freegames.domain.model.Game
 
 data class HomeUiState(
     val isLoading: Boolean = false,
-    val popularGames: List<Game> = emptyList()
+    val popularGames: List<Game> = emptyList(),
+    val recommendedGames: List<Game> = emptyList(),
 )

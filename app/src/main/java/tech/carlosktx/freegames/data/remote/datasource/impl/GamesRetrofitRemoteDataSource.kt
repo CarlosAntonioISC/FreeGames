@@ -15,4 +15,8 @@ class GamesRetrofitRemoteDataSource @Inject constructor(
         return gamesApi.getPopularGames().map { it.toGameModel() }
     }
 
+    override suspend fun getGameById(id: Int): Game {
+        return gamesApi.getGameById(id).toGameModel()
+    }
+
 }

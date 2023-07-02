@@ -7,15 +7,12 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -28,7 +25,7 @@ import tech.carlosktx.freegames.data.dummy.gameDummy1
 import tech.carlosktx.freegames.domain.model.Game
 
 @Composable
-fun ImportantGameItem(
+fun RecommendendGameItem(
     game: Game,
     onClickGame: (Game) -> Unit,
     modifier: Modifier = Modifier,
@@ -81,7 +78,7 @@ fun ImportantGameItem(
 @Composable
 private fun ImportantGameItemPreview() {
     Box {
-        ImportantGameItem(
+        RecommendendGameItem(
             game = gameDummy1,
             placeHolderThumbnail = R.drawable.thumbnail_dummy,
             onClickGame = {}

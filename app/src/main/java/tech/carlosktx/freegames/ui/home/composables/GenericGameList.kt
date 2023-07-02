@@ -49,7 +49,7 @@ fun GenericGameList(
     showBackground = true,
 )
 @Composable
-private fun GenericGameListPreview() {
+private fun RecommendedGameListPreview() {
     GenericGameList(
         title = stringResource(id = R.string.popular_games),
         games = gamesDummy,

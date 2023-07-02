@@ -5,4 +5,6 @@ import tech.carlosktx.freegames.domain.model.Game
 interface GamesRemoteDataSource {
     suspend fun getPopularGames(): List<Game>
 
+    suspend fun getGameById(id: Int): Game
+
 }
