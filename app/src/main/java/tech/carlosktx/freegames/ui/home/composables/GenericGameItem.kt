@@ -21,7 +21,6 @@ import coil.compose.AsyncImage
 import tech.carlosktx.freegames.R
 import tech.carlosktx.freegames.data.dummy.gameDummy1
 import tech.carlosktx.freegames.domain.model.Game
-import tech.carlosktx.freegames.domain.model.Genre
 
 @Composable
 fun GenericGameItem(

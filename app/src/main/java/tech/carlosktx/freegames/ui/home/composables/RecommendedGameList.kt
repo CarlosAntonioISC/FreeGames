@@ -19,8 +19,6 @@ import tech.carlosktx.freegames.R
 import tech.carlosktx.freegames.data.dummy.gamesDummy
 import tech.carlosktx.freegames.domain.model.Game
 import tech.carlosktx.freegames.utils.carouselTransition
-import kotlin.math.ceil
-import kotlin.math.floor
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

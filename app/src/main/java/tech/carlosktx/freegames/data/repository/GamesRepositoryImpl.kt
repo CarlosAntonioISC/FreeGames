@@ -35,4 +35,9 @@ class GamesRepositoryImpl @Inject constructor(
         }
     }
 
+    override fun getGameById(gameId: Int): Flow<Game> {
+        return flow {
+            emit(remoteDataSource.getGameById(gameId))
+        }
+    }
 }
