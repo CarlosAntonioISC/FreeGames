@@ -12,6 +12,7 @@ import tech.carlosktx.freegames.ui.theme.FreeGamesTheme
 
 @Composable
 fun GameDetailScreen(
+    gameId: Int,
     uiState: GameDetailUiState
 ) {
     Text(text = uiState.game?.title.orEmpty())
@@ -27,7 +28,7 @@ fun GameDetailScreenPreview() {
             val uiState = GameDetailUiState(
                 game = gameDummy1
             )
-            GameDetailScreen(uiState = uiState)
+            GameDetailScreen(1, uiState = uiState)
         }
     }
 }
