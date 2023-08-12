@@ -24,9 +24,11 @@ object NavigationGameDetailScreen : Navigation {
     override val route: String
         get() = "detail"
     override val routeWithArgs: String
-        get() = "detail/{id}"
+        get() = "detail/{$GAME_ID_ARG}"
 
-    val gameIdArg = NavArg("id", NavType.IntType)
+    private const val GAME_ID_ARG = "id"
+
+    val gameIdArg = NavArg(GAME_ID_ARG, NavType.IntType)
 
     override val arguments: List<NamedNavArgument>
         get() = listOf(navArgument(gameIdArg.key) { type = gameIdArg.navType })

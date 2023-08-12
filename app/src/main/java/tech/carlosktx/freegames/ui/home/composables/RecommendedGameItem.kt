@@ -25,7 +25,7 @@ import tech.carlosktx.freegames.data.dummy.gameDummy1
 import tech.carlosktx.freegames.domain.model.Game
 
 @Composable
-fun RecommendendGameItem(
+fun RecommendedGameItem(
     game: Game,
     onClickGame: (Game) -> Unit,
     modifier: Modifier = Modifier,
@@ -78,7 +78,7 @@ fun RecommendendGameItem(
 @Composable
 private fun ImportantGameItemPreview() {
     Box {
-        RecommendendGameItem(
+        RecommendedGameItem(
             game = gameDummy1,
             placeHolderThumbnail = R.drawable.thumbnail_dummy,
             onClickGame = {}

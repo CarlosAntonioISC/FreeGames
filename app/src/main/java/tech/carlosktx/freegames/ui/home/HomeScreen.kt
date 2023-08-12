@@ -74,6 +74,7 @@ fun HomeScreenPreview() {
         ) {
             val uiState = HomeUiState(
                 isLoading = false,
+                recommendedGames = gamesDummy,
                 popularGames = gamesDummy
             )
             HomeScreen(uiState = uiState, onClickGame = {})
