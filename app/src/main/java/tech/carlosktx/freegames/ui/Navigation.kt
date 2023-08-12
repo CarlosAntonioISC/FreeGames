@@ -10,7 +10,7 @@ interface Navigation {
     val arguments: List<NamedNavArgument>
 }
 
-object HomeScreen : Navigation {
+object NavigationHomeScreen : Navigation {
     override val route: String
         get() = "home"
     override val routeWithArgs: String
@@ -19,7 +19,7 @@ object HomeScreen : Navigation {
         get() = emptyList()
 }
 
-object GameDetailScreen : Navigation {
+object NavigationGameDetailScreen : Navigation {
 
     override val route: String
         get() = "detail"

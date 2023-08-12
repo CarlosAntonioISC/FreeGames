@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.update
@@ -32,6 +33,8 @@ class HomeViewModel @Inject constructor(
                         recommendedGames = recommendedGames
                     )
                 }
+            }.catch {
+                _uiState.update { it.copy(showError = true) }
             }.collect()
             _uiState.update { it.copy(isLoading = false) }
         }

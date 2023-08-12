@@ -16,8 +16,10 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.Wallpapers
 import tech.carlosktx.freegames.R
+import tech.carlosktx.freegames.data.dummy.gameDummy1
 import tech.carlosktx.freegames.data.dummy.gamesDummy
 import tech.carlosktx.freegames.domain.model.Game
+import tech.carlosktx.freegames.ui.common.ErrorScreen
 import tech.carlosktx.freegames.ui.home.composables.GenericGameList
 import tech.carlosktx.freegames.ui.home.composables.RecommendedGameList
 import tech.carlosktx.freegames.ui.theme.FreeGamesTheme
@@ -27,27 +29,33 @@ fun HomeScreen(
     uiState: HomeUiState,
     onClickGame: (Game) -> Unit
 ) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
-        verticalArrangement = Arrangement.Top
-    ) {
-
-        if (uiState.isLoading) {
-            LinearProgressIndicator(
-                modifier = Modifier.semantics(mergeDescendants = true){}.fillMaxWidth()
-            )
+    if (uiState.showError) {
+        ErrorScreen() {
+            onClickGame(gameDummy1)
         }
-
-        RecommendedGameList(
-            title = stringResource(id = R.string.recommended_games),
-            games = uiState.recommendedGames,
-            onClickItem = { onClickGame(it) })
-        GenericGameList(
-            title = stringResource(id = R.string.popular_games),
-            games = uiState.popularGames,
-            onClickItem = { onClickGame(it) })
+    } else {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(MaterialTheme.colorScheme.background),
+            verticalArrangement = Arrangement.Top
+        ) {
+            if (uiState.isLoading) {
+                LinearProgressIndicator(
+                    modifier = Modifier
+                        .semantics(mergeDescendants = true) {}
+                        .fillMaxWidth()
+                )
+            }
+            RecommendedGameList(
+                title = stringResource(id = R.string.recommended_games),
+                games = uiState.recommendedGames,
+                onClickItem = { onClickGame(it) })
+            GenericGameList(
+                title = stringResource(id = R.string.popular_games),
+                games = uiState.popularGames,
+                onClickItem = { onClickGame(it) })
+        }
     }
 }
 

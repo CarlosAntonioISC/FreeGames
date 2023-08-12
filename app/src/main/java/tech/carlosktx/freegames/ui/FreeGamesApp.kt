@@ -15,23 +15,21 @@ import tech.carlosktx.freegames.ui.home.HomeViewModel
 fun FreeGamesNavigation() {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = HomeScreen.route) {
-        composable(HomeScreen.route) {
+    NavHost(navController = navController, startDestination = NavigationHomeScreen.route) {
+        composable(NavigationHomeScreen.route) {
             val viewModel: HomeViewModel = hiltViewModel()
             val uiState = viewModel.uiState.collectAsStateWithLifecycle()
             HomeScreen(uiState.value, onClickGame = { game ->
-                navController.navigate(GameDetailScreen.createRouteWithArgument(game.id))
+                navController.navigate(NavigationGameDetailScreen.createRouteWithArgument(game.id))
             })
         }
         composable(
-            GameDetailScreen.routeWithArgs,
-            arguments = GameDetailScreen.arguments
-        ) { backStackEntry ->
+            NavigationGameDetailScreen.routeWithArgs,
+            arguments = NavigationGameDetailScreen.arguments
+        ) {
             val viewModel: GameDetailViewModel = hiltViewModel()
             val uiState = viewModel.uiState.collectAsStateWithLifecycle()
-            val gameId = backStackEntry.arguments?.getInt(GameDetailScreen.gameIdArg.key) ?: 0
-            viewModel.getGameById(gameId)
-            GameDetailScreen(gameId = gameId, uiState.value)
+            GameDetailScreen(uiState.value)
         }
     }
 }

@@ -23,6 +23,8 @@ data class GameResponse(
     val developer: String,
     @SerializedName("release_date")
     val releaseDate: String,
+    @SerializedName("freetogame_profile_url")
+    val freeToGameProfile_url: String,
     @SerializedName("reetogame_profile_url")
     val freeToGameProfileUrl: String
 )
