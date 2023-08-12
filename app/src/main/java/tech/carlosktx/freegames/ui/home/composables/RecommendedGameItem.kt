@@ -23,6 +23,7 @@ import coil.compose.AsyncImage
 import tech.carlosktx.freegames.R
 import tech.carlosktx.freegames.data.dummy.gameDummy1
 import tech.carlosktx.freegames.domain.model.Game
+import tech.carlosktx.freegames.ui.common.TextGenre
 
 @Composable
 fun RecommendedGameItem(
@@ -58,19 +59,7 @@ fun RecommendedGameItem(
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
         )
-        Text(
-            text = game.genre.name,
-            modifier = Modifier
-                .padding(start = 15.dp, end = 15.dp,  bottom = 20.dp, top = 5.dp)
-                .clip(MaterialTheme.shapes.extraLarge)
-                .background(MaterialTheme.colorScheme.secondary)
-                .padding(vertical = 5.dp, horizontal = 10.dp)
-            ,
-            color = MaterialTheme.colorScheme.onSecondary,
-            style = MaterialTheme.typography.bodyLarge,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
-        )
+        TextGenre(game.genre)
     }
 }
 

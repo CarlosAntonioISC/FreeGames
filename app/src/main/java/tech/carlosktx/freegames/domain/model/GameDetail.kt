@@ -8,7 +8,7 @@ class GameDetail(
     val shortDescription: String,
     val description: String,
     val game_url: String,
-    val genre: String,
+    val genre: Genre,
     val platform: String,
     val publisher: String,
     val developer: String,

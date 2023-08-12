@@ -4,6 +4,7 @@ import tech.carlosktx.freegames.data.remote.retrofit.response.GameDetailResponse
 import tech.carlosktx.freegames.data.remote.retrofit.response.MinimumRequirementsResponse
 import tech.carlosktx.freegames.data.remote.retrofit.response.ScreenshotsResponse
 import tech.carlosktx.freegames.domain.model.GameDetail
+import tech.carlosktx.freegames.domain.model.Genre
 import tech.carlosktx.freegames.domain.model.MinimumRequirements
 import tech.carlosktx.freegames.domain.model.Screenshot
 
@@ -16,7 +17,7 @@ fun GameDetailResponse.toGameModel(): GameDetail {
         shortDescription = this.shortDescription.orEmpty(),
         description = this.description.orEmpty(),
         game_url = this.game_url.orEmpty(),
-        genre = this.genre.orEmpty(),
+        genre = Genre.SHOOTER,
         platform = this.platform.orEmpty(),
         publisher = this.publisher.orEmpty(),
         developer = this.developer.orEmpty(),
