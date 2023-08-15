@@ -29,7 +29,12 @@ fun FreeGamesNavigation() {
         ) {
             val viewModel: GameDetailViewModel = hiltViewModel()
             val uiState = viewModel.uiState.collectAsStateWithLifecycle()
-            GameDetailScreen(uiState.value)
+            GameDetailScreen(
+                uiState.value,
+                onClickIconBack = {
+                    navController.popBackStack()
+                }
+            )
         }
     }
 }

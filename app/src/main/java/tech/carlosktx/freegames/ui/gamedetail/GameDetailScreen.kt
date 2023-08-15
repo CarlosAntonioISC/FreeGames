@@ -2,8 +2,10 @@ package tech.carlosktx.freegames.ui.gamedetail
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
@@ -19,28 +21,50 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import tech.carlosktx.freegames.R
-import tech.carlosktx.freegames.data.dummy.gameDummy1
 import tech.carlosktx.freegames.domain.model.GameDetail
+import tech.carlosktx.freegames.ui.common.BackIcon
+import tech.carlosktx.freegames.ui.common.FavoriteButton
 import tech.carlosktx.freegames.ui.common.TextGenre
 import tech.carlosktx.freegames.ui.gamedetail.composables.GameDetailImagesCarousel
 import tech.carlosktx.freegames.ui.theme.FreeGamesTheme
 
 @Composable
-fun GameDetailScreen(uiState: GameDetailUiState) {
+fun GameDetailScreen(
+    uiState: GameDetailUiState,
+    onClickIconBack: () -> Unit
+) {
     val scrollState = rememberScrollState()
-
-    uiState.game?.let { gameDetail ->
-        Column(
-            modifier = Modifier
-                .padding(horizontal = 16.dp)
-                .verticalScroll(state = scrollState)
-        ) {
-            GameDetailImagesCarousel(
-                images = gameDetail.screenshots.map { it.image },
-                modifier = Modifier.padding(vertical = 32.dp)
-            )
-            DetailGameDescription(gameDetail)
+    Column(
+        modifier = Modifier.padding(horizontal = 16.dp)
+    ) {
+        GameDetailContentTop(
+            onClickIconBack = onClickIconBack,
+            modifier = Modifier.padding(vertical = 16.dp)
+        )
+        uiState.game?.let { gameDetail ->
+            Column(
+                modifier = Modifier.verticalScroll(state = scrollState)
+            ) {
+                GameDetailImagesCarousel(
+                    images = gameDetail.screenshots.map { it.image },
+                    modifier = Modifier.padding(bottom = 32.dp)
+                )
+                DetailGameDescription(gameDetail)
+            }
         }
+    }
+}
+
+@Composable
+private fun GameDetailContentTop(onClickIconBack: () -> Unit, modifier: Modifier) {
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        BackIcon(onClickButton = onClickIconBack)
+        Text(text = "Game Detail", style = MaterialTheme.typography.headlineMedium)
+        FavoriteButton(isFavorite = false, onClickButton = {})
     }
 }
 
@@ -87,7 +111,7 @@ fun GameDetailScreenPreview() {
             modifier = Modifier.background(MaterialTheme.colorScheme.background)
         ) {
             val uiState = GameDetailUiState(game = null)
-            GameDetailScreen(uiState = uiState)
+            GameDetailScreen(uiState = uiState) {}
         }
     }
 }
