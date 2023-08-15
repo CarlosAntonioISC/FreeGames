@@ -20,11 +20,11 @@ fun BackIcon(onClickButton: () -> Unit) {
         onClick = { onClickButton() },
         modifier = Modifier
             .clip(CircleShape)
-            .background(MaterialTheme.colorScheme.onSecondary)
+            .background(MaterialTheme.colorScheme.secondaryContainer)
     ) {
         Icon(
             imageVector = Icons.Default.ArrowBack,
-            tint = MaterialTheme.colorScheme.secondary,
+            tint = MaterialTheme.colorScheme.onSecondaryContainer,
             contentDescription = "Back",
             modifier = Modifier.size(30.dp)
         )
