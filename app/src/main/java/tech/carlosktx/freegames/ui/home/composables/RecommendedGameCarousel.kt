@@ -39,13 +39,7 @@ fun RecommendedGameList(
     Column(
         modifier = modifier.fillMaxWidth()
     ) {
-
-        Text(
-            text = title,
-            modifier = Modifier.padding(vertical = 16.dp, horizontal = 16.dp),
-            style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold)
-        )
-
+        TitleSection(title)
         HorizontalPager(
             pageCount = pageCount,
             state = pagerState,
