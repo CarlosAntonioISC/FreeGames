@@ -16,17 +16,10 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun BackIcon(onClickButton: () -> Unit) {
-    IconButton(
-        onClick = { onClickButton() },
-        modifier = Modifier
-            .clip(CircleShape)
-            .background(MaterialTheme.colorScheme.secondaryContainer)
-    ) {
+    IconButton(onClick = { onClickButton() }) {
         Icon(
             imageVector = Icons.Default.ArrowBack,
-            tint = MaterialTheme.colorScheme.onSecondaryContainer,
-            contentDescription = "Back",
-            modifier = Modifier.size(30.dp)
+            contentDescription = "Go back"
         )
     }
 }

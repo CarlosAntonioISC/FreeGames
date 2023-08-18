@@ -2,6 +2,7 @@ package tech.carlosktx.freegames.ui.common
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.outlined.Favorite
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material3.Icon
@@ -22,8 +23,7 @@ fun FavoriteButton(isFavorite: Boolean, onClickButton: () -> Unit) {
                 Icons.Outlined.FavoriteBorder
             },
             contentDescription = "Mark as favorite",
-            modifier = Modifier.size(48.dp),
-            tint = MaterialTheme.colorScheme.secondary,
+            tint = MaterialTheme.colorScheme.secondary
         )
     }
 }
