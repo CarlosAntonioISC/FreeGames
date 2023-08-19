@@ -11,7 +11,6 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import tech.carlosktx.freegames.domain.usescase.GetGameDetailUseCase
 import tech.carlosktx.freegames.ui.NavArg
-import tech.carlosktx.freegames.ui.NavigationGameDetailScreen
 import javax.inject.Inject
 
 @HiltViewModel
@@ -22,7 +21,7 @@ class GameDetailViewModel @Inject constructor(
 
     private val _uiState = MutableStateFlow(GameDetailUiState())
     val uiState = _uiState.asStateFlow()
-    private val idGame = savedStateHandle.get<Int>(NavigationGameDetailScreen.gameIdArg.key) ?: 0
+    private val idGame = savedStateHandle.get<Int>(NavArg.ItemId.key) ?: 0
 
     init {
         getGameById(idGame)

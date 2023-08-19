@@ -1,43 +1,76 @@
 package tech.carlosktx.freegames.ui
 
-import androidx.navigation.NamedNavArgument
+import androidx.annotation.StringRes
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.outlined.Favorite
+import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.Search
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
+import tech.carlosktx.freegames.R
 
-interface Navigation {
-    val route: String
-    val routeWithArgs: String
-    val arguments: List<NamedNavArgument>
+enum class Feature(val route: String) {
+    GAME("game"),
+    FAVORITES("favorites"),
+    SEARCHER("searcher"),
 }
 
-object NavigationHomeScreen : Navigation {
-    override val route: String
-        get() = "home"
-    override val routeWithArgs: String
-        get() = ""
-    override val arguments: List<NamedNavArgument>
-        get() = emptyList()
+enum class NavItem(
+    val navCommand: NavCommand,
+    val selectedIcon: ImageVector,
+    val unselectedIcon: ImageVector,
+    @StringRes val title: Int
+) {
+    HOME(
+        NavCommand.ContentType(Feature.GAME),
+        Icons.Filled.Home,
+        Icons.Outlined.Home, R.string.home
+    ),
+    FAVORITES(
+        NavCommand.ContentType(Feature.FAVORITES),
+        Icons.Filled.Favorite,
+        Icons.Outlined.Favorite,
+        R.string.favorites
+    ),
+    SEARCHER(
+        NavCommand.ContentType(Feature.SEARCHER),
+        Icons.Filled.Search,
+        Icons.Outlined.Search,
+        R.string.search
+    )
 }
 
-object NavigationGameDetailScreen : Navigation {
 
-    override val route: String
-        get() = "detail"
-    override val routeWithArgs: String
-        get() = "detail/{$GAME_ID_ARG}"
+sealed class NavCommand(
+    internal val feature: Feature,
+    internal val subRoute: String = "home",
+    private val navArgs: List<NavArg> = emptyList()
+) {
+    class ContentType(feature: Feature) : NavCommand(feature)
 
-    private const val GAME_ID_ARG = "id"
+    class ContentTypeDetail(feature: Feature) :
+        NavCommand(feature, "detail", listOf(NavArg.ItemId)) {
+        fun createRoute(itemId: Int) = "${feature.route}/$subRoute/$itemId"
+    }
 
-    val gameIdArg = NavArg(GAME_ID_ARG, NavType.IntType)
+    val route = run {
+        val argValues = navArgs.map { "{${it.key}}" }
+        listOf(feature.route)
+            .plus(subRoute)
+            .plus(argValues)
+            .joinToString("/")
+    }
 
-    override val arguments: List<NamedNavArgument>
-        get() = listOf(navArgument(gameIdArg.key) { type = gameIdArg.navType })
-
-    fun createRouteWithArgument(gameId: Int): String {
-        return "$route/$gameId"
+    val args = navArgs.map {
+        navArgument(it.key) { type = it.navType }
     }
 
 }
 
-
-class NavArg(val key: String, val navType: NavType<*>)
+enum class NavArg(val key: String, val navType: NavType<*>) {
+    ItemId("itemId", NavType.IntType)
+}

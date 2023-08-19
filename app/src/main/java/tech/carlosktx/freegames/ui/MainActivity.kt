@@ -9,10 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
-import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import dagger.hilt.android.AndroidEntryPoint
 import tech.carlosktx.freegames.ui.theme.FreeGamesTheme
@@ -43,7 +40,7 @@ private fun AppWithStatusBarAndNavigationBarTheme(content: @Composable () -> Uni
     val systemUiController = rememberSystemUiController()
     val useDarkIcons = !isSystemInDarkTheme()
     val color = MaterialTheme.colorScheme.background
-    SideEffect() {
+    SideEffect {
         systemUiController.setStatusBarColor(
             color = color,
             darkIcons = useDarkIcons

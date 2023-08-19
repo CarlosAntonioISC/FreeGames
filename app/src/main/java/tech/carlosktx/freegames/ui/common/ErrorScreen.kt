@@ -12,9 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun ErrorScreen(onClick: () -> Unit) {
+fun ErrorScreen() {
     Column(
-        modifier = Modifier.fillMaxSize().clickable{onClick()},
+        modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -25,5 +25,5 @@ fun ErrorScreen(onClick: () -> Unit) {
 @Preview(showBackground = true)
 @Composable
 fun ErrorScreenPreview() {
-    ErrorScreen({})
+    ErrorScreen()
 }
