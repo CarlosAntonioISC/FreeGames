@@ -4,6 +4,6 @@ data class Game(
     val id: Int,
     val title: String,
     val description: String,
-    val genre: Genre,
+    val category: Category,
     val thumbnail: String
 )

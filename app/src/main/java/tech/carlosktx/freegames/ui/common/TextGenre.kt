@@ -9,12 +9,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import tech.carlosktx.freegames.domain.model.Genre
+import tech.carlosktx.freegames.domain.model.Category
 
 @Composable
-fun TextGenre(genre: Genre) {
+fun TextCategory(category: Category) {
     Text(
-        text = genre.name,
+        text = category.name,
         modifier = Modifier
             .padding(start = 15.dp, end = 15.dp)
             .clip(MaterialTheme.shapes.extraLarge)

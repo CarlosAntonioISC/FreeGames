@@ -19,10 +19,10 @@ import tech.carlosktx.freegames.R
 import tech.carlosktx.freegames.data.dummy.gameDummy1
 import tech.carlosktx.freegames.data.dummy.gamesDummy
 import tech.carlosktx.freegames.domain.model.Game
-import tech.carlosktx.freegames.domain.model.Genre
+import tech.carlosktx.freegames.domain.model.Category
 import tech.carlosktx.freegames.ui.common.ErrorScreen
 import tech.carlosktx.freegames.ui.home.composables.GenericGameList
-import tech.carlosktx.freegames.ui.home.composables.GenreList
+import tech.carlosktx.freegames.ui.home.composables.CategoryList
 import tech.carlosktx.freegames.ui.home.composables.RecommendedGameList
 import tech.carlosktx.freegames.ui.theme.FreeGamesTheme
 
@@ -49,7 +49,7 @@ fun HomeScreen(
                         .fillMaxWidth()
                 )
             }
-            GenreList(genres = Genre.values().asList())
+            CategoryList(categories = Category.values().asList())
             RecommendedGameList(
                 title = stringResource(id = R.string.recommended_games),
                 games = uiState.recommendedGames,

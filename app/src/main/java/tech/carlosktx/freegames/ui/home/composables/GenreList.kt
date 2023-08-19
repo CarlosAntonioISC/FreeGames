@@ -7,17 +7,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import tech.carlosktx.freegames.R
-import tech.carlosktx.freegames.domain.model.Genre
+import tech.carlosktx.freegames.domain.model.Category
 
 @Composable
-fun GenreList(genres: List<Genre>) {
+fun CategoryList(categories: List<Category>) {
     TitleSection(stringResource(id = R.string.category_games))
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(16.dp),
         contentPadding = PaddingValues(horizontal = 16.dp)
     ) {
-        items(genres.size, key = { index -> genres[index].ordinal }) {
-            GenreItem(genre = genres[it])
+        items(categories.size, key = { index -> categories[index].ordinal }) {
+            CategoryItem(category = categories[it])
         }
     }
 }

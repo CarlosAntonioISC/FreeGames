@@ -4,7 +4,6 @@ import tech.carlosktx.freegames.data.remote.retrofit.response.GameDetailResponse
 import tech.carlosktx.freegames.data.remote.retrofit.response.MinimumRequirementsResponse
 import tech.carlosktx.freegames.data.remote.retrofit.response.ScreenshotsResponse
 import tech.carlosktx.freegames.domain.model.GameDetail
-import tech.carlosktx.freegames.domain.model.Genre
 import tech.carlosktx.freegames.domain.model.MinimumRequirements
 import tech.carlosktx.freegames.domain.model.Screenshot
 
@@ -17,7 +16,7 @@ fun GameDetailResponse.toGameModel(): GameDetail {
         shortDescription = this.shortDescription.orEmpty(),
         description = this.description.orEmpty(),
         game_url = this.game_url.orEmpty(),
-        genre = Genre.SHOOTER,
+        category = this.genre.toGenreModel(this.title!!),
         platform = this.platform.orEmpty(),
         publisher = this.publisher.orEmpty(),
         developer = this.developer.orEmpty(),
@@ -27,13 +26,13 @@ fun GameDetailResponse.toGameModel(): GameDetail {
     )
 }
 
-fun MinimumRequirementsResponse.toMinimumRequirementsModel(): MinimumRequirements {
+fun MinimumRequirementsResponse?.toMinimumRequirementsModel(): MinimumRequirements {
     return MinimumRequirements(
-        os = this.os.orEmpty(),
-        processor = this.processor.orEmpty(),
-        memory = this.memory.orEmpty(),
-        graphics = this.graphics.orEmpty(),
-        storage = this.storage
+        os = this?.os.orEmpty(),
+        processor = this?.processor.orEmpty(),
+        memory = this?.memory.orEmpty(),
+        graphics = this?.graphics.orEmpty(),
+        storage = this?.storage.orEmpty()
     )
 }
 

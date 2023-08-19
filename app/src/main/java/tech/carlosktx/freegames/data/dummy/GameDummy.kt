@@ -1,7 +1,7 @@
 package tech.carlosktx.freegames.data.dummy
 
 import tech.carlosktx.freegames.domain.model.Game
-import tech.carlosktx.freegames.domain.model.Genre
+import tech.carlosktx.freegames.domain.model.Category
 
 
 val gameDummy1 = Game(
@@ -9,7 +9,7 @@ val gameDummy1 = Game(
     title = "Overwatch 2",
     description = "A hero-focused first-person team shooter from Blizzard Entertainment.",
     thumbnail = "https://www.freetogame.com/g/540/thumbnail.jpg",
-    genre = Genre.SHOOTER
+    category = Category.SHOOTER
 )
 
 val gameDummy2 = Game(
@@ -17,7 +17,7 @@ val gameDummy2 = Game(
     title = "Diablo Immortal",
     description = "Built for mobile and also released on PC, Diablo Immortal fills in the gaps between Diablo II and III in an MMOARPG environment.",
     thumbnail = "https://www.freetogame.com/g/521/thumbnail.jpg",
-    genre = Genre.SHOOTER
+    category = Category.SHOOTER
 )
 
 val gameDummy3 = Game(
@@ -25,7 +25,7 @@ val gameDummy3 = Game(
     title = "Lost Ark",
     description = "milegate’s free-to-play multiplayer ARPG is a massive adventure filled with lands waiting to be explored, people waiting to be met, and an ancient evil waiting to be destroyed.",
     thumbnail = "https://www.freetogame.com/g/517/thumbnail.jpg",
-    genre = Genre.SHOOTER
+    category = Category.SHOOTER
 )
 
 val gamesDummy = listOf(

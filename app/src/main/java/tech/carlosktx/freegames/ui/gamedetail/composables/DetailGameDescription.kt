@@ -15,7 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import tech.carlosktx.freegames.R
 import tech.carlosktx.freegames.domain.model.GameDetail
-import tech.carlosktx.freegames.ui.common.TextGenre
+import tech.carlosktx.freegames.ui.common.TextCategory
 
 @Composable
 fun DetailGameDescription(gameDetail: GameDetail) {
@@ -37,7 +37,7 @@ fun DetailGameDescription(gameDetail: GameDetail) {
                 contentDescription = "",
                 modifier = Modifier.size(32.dp)
             )
-            TextGenre(gameDetail.genre)
+            TextCategory(gameDetail.category)
         }
         Text(
             text = "Game Description",

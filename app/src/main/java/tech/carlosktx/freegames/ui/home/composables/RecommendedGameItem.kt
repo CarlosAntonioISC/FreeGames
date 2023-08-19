@@ -1,7 +1,6 @@
 package tech.carlosktx.freegames.ui.home.composables
 
 import androidx.annotation.DrawableRes
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -23,7 +22,7 @@ import coil.compose.AsyncImage
 import tech.carlosktx.freegames.R
 import tech.carlosktx.freegames.data.dummy.gameDummy1
 import tech.carlosktx.freegames.domain.model.Game
-import tech.carlosktx.freegames.ui.common.TextGenre
+import tech.carlosktx.freegames.ui.common.TextCategory
 
 @Composable
 fun RecommendedGameItem(
@@ -59,7 +58,7 @@ fun RecommendedGameItem(
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
         )
-        TextGenre(game.genre)
+        TextCategory(game.category)
     }
 }
 
