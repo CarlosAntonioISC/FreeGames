@@ -1,4 +1,4 @@
-package tech.carlosktx.freegames.ui.home
+package tech.carlosktx.freegames.ui.screens.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

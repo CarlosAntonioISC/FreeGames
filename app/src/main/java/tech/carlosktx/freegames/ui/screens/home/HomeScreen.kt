@@ -1,4 +1,4 @@
-package tech.carlosktx.freegames.ui.home
+package tech.carlosktx.freegames.ui.screens.home
 
 import android.os.Build
 import androidx.compose.foundation.background
@@ -23,12 +23,12 @@ import tech.carlosktx.freegames.R
 import tech.carlosktx.freegames.data.dummy.gamesDummy
 import tech.carlosktx.freegames.domain.model.Game
 import tech.carlosktx.freegames.domain.model.Category
-import tech.carlosktx.freegames.ui.BottomNavigation
-import tech.carlosktx.freegames.ui.NavItem
+import tech.carlosktx.freegames.ui.navigation.composables.BottomNavigation
+import tech.carlosktx.freegames.ui.navigation.NavItem
 import tech.carlosktx.freegames.ui.common.ErrorScreen
-import tech.carlosktx.freegames.ui.home.composables.GenericGameList
-import tech.carlosktx.freegames.ui.home.composables.CategoryList
-import tech.carlosktx.freegames.ui.home.composables.RecommendedGameList
+import tech.carlosktx.freegames.ui.screens.home.composables.GenericGameList
+import tech.carlosktx.freegames.ui.screens.home.composables.CategoryList
+import tech.carlosktx.freegames.ui.screens.home.composables.RecommendedGameList
 import tech.carlosktx.freegames.ui.theme.FreeGamesTheme
 
 @OptIn(ExperimentalMaterial3Api::class)

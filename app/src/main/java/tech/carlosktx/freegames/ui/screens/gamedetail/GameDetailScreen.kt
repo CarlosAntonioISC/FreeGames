@@ -1,4 +1,4 @@
-package tech.carlosktx.freegames.ui.gamedetail
+package tech.carlosktx.freegames.ui.screens.gamedetail
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -20,8 +20,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import tech.carlosktx.freegames.ui.common.BackIcon
 import tech.carlosktx.freegames.ui.common.FavoriteButton
-import tech.carlosktx.freegames.ui.gamedetail.composables.DetailGameDescription
-import tech.carlosktx.freegames.ui.gamedetail.composables.GameDetailImagesCarousel
+import tech.carlosktx.freegames.ui.screens.gamedetail.composables.DetailGameDescription
+import tech.carlosktx.freegames.ui.screens.gamedetail.composables.GameDetailImagesCarousel
 import tech.carlosktx.freegames.ui.theme.FreeGamesTheme
 
 @OptIn(ExperimentalMaterial3Api::class)

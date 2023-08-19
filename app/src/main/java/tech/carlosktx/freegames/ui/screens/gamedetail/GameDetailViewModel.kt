@@ -1,6 +1,5 @@
-package tech.carlosktx.freegames.ui.gamedetail
+package tech.carlosktx.freegames.ui.screens.gamedetail
 
-import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,7 +9,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import tech.carlosktx.freegames.domain.usescase.GetGameDetailUseCase
-import tech.carlosktx.freegames.ui.NavArg
+import tech.carlosktx.freegames.ui.navigation.NavArg
 import javax.inject.Inject
 
 @HiltViewModel

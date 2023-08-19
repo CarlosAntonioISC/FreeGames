@@ -1,4 +1,4 @@
-package tech.carlosktx.freegames.ui.home.composables
+package tech.carlosktx.freegames.ui.screens.home.composables
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme

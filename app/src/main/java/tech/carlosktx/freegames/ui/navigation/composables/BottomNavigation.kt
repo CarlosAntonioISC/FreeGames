@@ -1,4 +1,4 @@
-package tech.carlosktx.freegames.ui
+package tech.carlosktx.freegames.ui.navigation.composables
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -7,6 +7,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import tech.carlosktx.freegames.ui.navigation.NavItem
 
 @Composable
 fun BottomNavigation(

@@ -1,4 +1,4 @@
-package tech.carlosktx.freegames.ui.home.composables
+package tech.carlosktx.freegames.ui.screens.home.composables
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues

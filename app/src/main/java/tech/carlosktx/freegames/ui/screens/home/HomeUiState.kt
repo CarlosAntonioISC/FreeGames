@@ -1,4 +1,4 @@
-package tech.carlosktx.freegames.ui.home
+package tech.carlosktx.freegames.ui.screens.home
 
 import tech.carlosktx.freegames.domain.model.Game
 

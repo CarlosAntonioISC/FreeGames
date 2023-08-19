@@ -1,4 +1,4 @@
-package tech.carlosktx.freegames.ui
+package tech.carlosktx.freegames.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -8,10 +8,10 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import tech.carlosktx.freegames.ui.gamedetail.GameDetailScreen
-import tech.carlosktx.freegames.ui.gamedetail.GameDetailViewModel
-import tech.carlosktx.freegames.ui.home.HomeScreen
-import tech.carlosktx.freegames.ui.home.HomeViewModel
+import tech.carlosktx.freegames.ui.screens.gamedetail.GameDetailScreen
+import tech.carlosktx.freegames.ui.screens.gamedetail.GameDetailViewModel
+import tech.carlosktx.freegames.ui.screens.home.HomeScreen
+import tech.carlosktx.freegames.ui.screens.home.HomeViewModel
 
 @Composable
 fun FreeGamesNavigation() {

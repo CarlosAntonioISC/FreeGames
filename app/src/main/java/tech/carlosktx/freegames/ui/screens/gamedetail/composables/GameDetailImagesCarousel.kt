@@ -1,4 +1,4 @@
-package tech.carlosktx.freegames.ui.gamedetail.composables
+package tech.carlosktx.freegames.ui.screens.gamedetail.composables
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column

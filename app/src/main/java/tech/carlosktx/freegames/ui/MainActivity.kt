@@ -12,6 +12,7 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import dagger.hilt.android.AndroidEntryPoint
+import tech.carlosktx.freegames.ui.navigation.FreeGamesNavigation
 import tech.carlosktx.freegames.ui.theme.FreeGamesTheme
 
 @AndroidEntryPoint
