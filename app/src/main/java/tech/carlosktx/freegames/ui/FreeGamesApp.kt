@@ -21,9 +21,7 @@ fun FreeGamesApp(freeGamesState: FreeGamesState = rememberFreeGamesState()) {
                     BottomNavigation(
                         navOptions = FreeGamesState.BOTTOM_NAV_OPTIONS,
                         currentRoute = freeGamesState.currentRoute,
-                        onNavItemClick = {
-                            freeGamesState.onNavItemClick(it)
-                        }
+                        onNavItemClick = { freeGamesState.onNavItemClick(it) }
                     )
                 }
             }

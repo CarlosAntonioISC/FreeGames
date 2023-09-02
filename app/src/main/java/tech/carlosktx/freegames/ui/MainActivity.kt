@@ -1,6 +1,7 @@
 package tech.carlosktx.freegames.ui
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -42,11 +43,7 @@ private fun AppWithStatusBarAndNavigationBarTheme(content: @Composable () -> Uni
     val useDarkIcons = !isSystemInDarkTheme()
     val color = MaterialTheme.colorScheme.background
     SideEffect {
-        systemUiController.setStatusBarColor(
-            color = color,
-            darkIcons = useDarkIcons
-        )
-        systemUiController.setNavigationBarColor(
+        systemUiController.setSystemBarsColor(
             color = color,
             darkIcons = useDarkIcons
         )

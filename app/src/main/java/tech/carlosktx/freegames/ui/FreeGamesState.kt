@@ -25,17 +25,13 @@ class FreeGamesState(val navController: NavHostController) {
     }
 
     val currentRoute: String
-        @Composable get() = (navController.currentBackStackEntryAsState().value?.destination?.route
-            ?: "").also {
-            Log.d("carloss current route", it)
-        }
+        @Composable get() = navController.currentBackStackEntryAsState().value?.destination?.route ?: ""
 
     val showBottomNavigation: Boolean
-        @Composable get() = BOTTOM_NAV_OPTIONS.any { currentRoute.contains(it.navCommand.feature
-            .route) }.also {
-            Log.d("carloss shoe bottom navigation", "$it")
+        @Composable get() {
+            val currentRouteAux = currentRoute
+            return BOTTOM_NAV_OPTIONS.any { currentRouteAux == it.navCommand.route }
         }
-
     fun onNavItemClick(navItem: NavItem) {
         navController.navigatePoppingUpToStartDestination(navItem.navCommand.route)
     }
