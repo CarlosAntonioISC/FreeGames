@@ -8,7 +8,7 @@ fun GameResponse.toGameModel(): Game {
         id = this.id,
         title = this.title,
         description = this.shortDescription,
-        category = this.genre.toGenreModel(this.title),
+        category = this.genre.toGenreModel(),
         thumbnail = this.thumbnail
     )
 }

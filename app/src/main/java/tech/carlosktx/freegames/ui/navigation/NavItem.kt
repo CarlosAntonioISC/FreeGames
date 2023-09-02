@@ -22,7 +22,8 @@ enum class NavItem(
     HOME(
         NavCommand.ContentType(Feature.GAME),
         Icons.Filled.Home,
-        Icons.Outlined.Home, R.string.home
+        Icons.Outlined.Home,
+        R.string.home
     ),
     FAVORITES(
         NavCommand.ContentType(Feature.FAVORITES),

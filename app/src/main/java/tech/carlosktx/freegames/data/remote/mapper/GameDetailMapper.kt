@@ -16,7 +16,7 @@ fun GameDetailResponse.toGameModel(): GameDetail {
         shortDescription = this.shortDescription.orEmpty(),
         description = this.description.orEmpty(),
         game_url = this.game_url.orEmpty(),
-        category = this.genre.toGenreModel(this.title!!),
+        category = this.genre.toGenreModel(),
         platform = this.platform.orEmpty(),
         publisher = this.publisher.orEmpty(),
         developer = this.developer.orEmpty(),
