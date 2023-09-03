@@ -4,17 +4,13 @@ import io.mockk.coEvery
 import io.mockk.coJustRun
 import io.mockk.coVerify
 import io.mockk.coVerifyAll
-import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.junit4.MockKRule
-import io.mockk.justRun
-import io.mockk.verifyAll
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Rule
-
 import org.junit.Test
 import tech.carlosktx.freegames.data.dummy.gameDetailDummy1
 import tech.carlosktx.freegames.data.dummy.gameDetailDummy2

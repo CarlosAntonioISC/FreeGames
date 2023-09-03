@@ -22,12 +22,8 @@ class GameDetailViewModel @Inject constructor(
     val uiState = _uiState.asStateFlow()
     private val idGame = savedStateHandle.get<Int>(NavArg.ItemId.key) ?: 0
 
-    init {
-        getGameById(idGame)
-    }
-
-    private fun getGameById(gameId: Int) = viewModelScope.launch {
-        getGameByIdUseCase(gameId).collect { game ->
+    fun getGameById() = viewModelScope.launch {
+        getGameByIdUseCase(idGame).collect { game ->
             _uiState.update { it.copy(game = game) }
         }
     }
