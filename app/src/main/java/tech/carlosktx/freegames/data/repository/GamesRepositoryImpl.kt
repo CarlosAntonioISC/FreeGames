@@ -1,6 +1,5 @@
 package tech.carlosktx.freegames.data.repository
 
-import android.util.Log
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -42,4 +41,5 @@ class GamesRepositoryImpl @Inject constructor(
            emit(remoteDataSource.getGameById(gameId))
         }
     }
+
 }

@@ -26,3 +26,49 @@ val gameDetailDummy1 = GameDetail(
     ),
     screenshots = listOf()
 )
+
+val gameDetailDummy2 = GameDetail(
+    id = 2,
+    title = "",
+    thumbnail = "",
+    status = "",
+    shortDescription = "",
+    description = "",
+    game_url = "",
+    category = Category.CARDS,
+    platform = "",
+    publisher = "",
+    developer = "",
+    release_date = "",
+    minimumRequirements = MinimumRequirements(
+        os = "",
+        processor = "",
+        memory = "",
+        graphics = "",
+        storage = ""
+    ),
+    screenshots = listOf()
+)
+
+val gameDetailDummy3 = GameDetail(
+    id = 3,
+    title = "",
+    thumbnail = "",
+    status = "",
+    shortDescription = "",
+    description = "",
+    game_url = "",
+    category = Category.CARDS,
+    platform = "",
+    publisher = "",
+    developer = "",
+    release_date = "",
+    minimumRequirements = MinimumRequirements(
+        os = "",
+        processor = "",
+        memory = "",
+        graphics = "",
+        storage = ""
+    ),
+    screenshots = listOf()
+)
