@@ -1,6 +1,7 @@
 package tech.carlosktx.freegames.ui.screens.home.composables
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -43,10 +44,9 @@ fun RecommendedGameList(
         HorizontalPager(
             pageCount = pageCount,
             state = pagerState,
-            contentPadding = PaddingValues(
-                horizontal = 64.dp
-            ),
-            pageSpacing = 16.dp
+            contentPadding = PaddingValues(horizontal = 64.dp),
+            pageSpacing = 16.dp,
+            modifier = Modifier.weight(1f)
         ) { page ->
             RecommendedGameItem(
                 game = games[page],
@@ -65,7 +65,6 @@ fun RecommendedGameList(
                         )
                     })
         }
-
         Spacer(modifier = Modifier.height(16.dp))
         DotsIndicator(pageCount = pageCount, pagerState = pagerState)
     }
@@ -73,7 +72,7 @@ fun RecommendedGameList(
 
 @Preview(
     showBackground = true,
-    backgroundColor = 0xFF000000
+    backgroundColor = 0xFFFFFFFF
 )
 @Composable
 private fun RecommendedGameListPreview() {

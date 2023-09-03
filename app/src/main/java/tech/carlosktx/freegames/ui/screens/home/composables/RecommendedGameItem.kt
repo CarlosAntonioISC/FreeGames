@@ -3,8 +3,8 @@ package tech.carlosktx.freegames.ui.screens.home.composables
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import tech.carlosktx.freegames.R
 import tech.carlosktx.freegames.data.dummy.gameDummy1
@@ -31,9 +32,9 @@ fun RecommendedGameItem(
     modifier: Modifier = Modifier,
     @DrawableRes placeHolderThumbnail: Int = R.drawable.plalce_holder
 ) {
-
     Card(
-        modifier = modifier.fillMaxWidth().height(280.dp)
+        modifier = modifier
+            .fillMaxSize()
             .clip(MaterialTheme.shapes.extraLarge)
             .clickable { onClickGame(game) }
     ) {
@@ -43,27 +44,34 @@ fun RecommendedGameItem(
             contentDescription = "${game.title} thumbnail",
             modifier = Modifier
                 .fillMaxWidth()
-                .height(180.dp)
                 .padding(10.dp)
+                .weight(1f)
                 .clip(MaterialTheme.shapes.extraLarge),
             contentScale = ContentScale.Crop
         )
         Text(
             text = game.title,
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 5.dp, horizontal = 15.dp),
-            style = MaterialTheme.typography.headlineSmall,
+                .padding(horizontal = 10.dp)
+                .fillMaxWidth(),
+            style = MaterialTheme.typography.bodyLarge.copy(fontSize = 18.sp),
             fontWeight = FontWeight.Bold,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
         )
-        TextCategory(game.category)
+        TextCategory(
+            game.category, modifier = Modifier.padding(
+                start = 15.dp,
+                end = 15.dp,
+                bottom = 10.dp,
+                top = 5.dp
+            )
+        )
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
 @Composable
+@Preview(showBackground = true, showSystemUi = true, heightDp = 500)
 private fun ImportantGameItemPreview() {
     Box {
         RecommendedGameItem(

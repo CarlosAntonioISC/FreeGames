@@ -3,8 +3,8 @@ package tech.carlosktx.freegames.ui.screens.home.composables
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
@@ -32,7 +32,6 @@ fun GenericGameItem(
     Column(
         modifier = modifier
             .width(140.dp)
-            .height(130.dp)
             .clip(MaterialTheme.shapes.small)
             .clickable { onClickGame(game) }
     ) {
@@ -42,7 +41,7 @@ fun GenericGameItem(
             contentDescription = "${game.title} thumbnail",
             modifier = Modifier
                 .fillMaxWidth()
-                .height(80.dp)
+                .weight(1f)
                 .clip(MaterialTheme.shapes.small),
             contentScale = ContentScale.Crop
         )
@@ -50,10 +49,9 @@ fun GenericGameItem(
             text = game.title,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(50.dp)
                 .padding(top = 5.dp),
-            style = MaterialTheme.typography.labelLarge,
-            maxLines = 2,
+            style = MaterialTheme.typography.labelMedium,
+            maxLines = 1,
             overflow = TextOverflow.Ellipsis,
         )
     }
@@ -61,13 +59,15 @@ fun GenericGameItem(
 
 
 @Preview(
-    showBackground = true
+    showBackground = true,
+    heightDp = 300
 )
 @Composable
 private fun GenericGameItemPreview() {
     GenericGameItem(
         game = gameDummy1,
         placeHolderThumbnail = R.drawable.thumbnail_dummy,
-        onClickGame = {}
+        onClickGame = {},
+        modifier = Modifier.fillMaxHeight()
     )
 }

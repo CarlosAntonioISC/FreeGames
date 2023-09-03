@@ -3,9 +3,13 @@ package tech.carlosktx.freegames.ui.screens.home.composables
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,25 +33,30 @@ fun GenericGameList(
         TitleSection(title)
         LazyRow(
             horizontalArrangement = Arrangement.spacedBy(16.dp),
-            contentPadding = PaddingValues(horizontal = 16.dp)
+            contentPadding = PaddingValues(horizontal = 16.dp),
+            modifier = Modifier.weight(1f)
         ) {
             items(items = games, key = { it.id }) {
                 GenericGameItem(
                     game = it,
-                    onClickGame = { game -> onClickItem(game) }
+                    onClickGame = { game -> onClickItem(game) },
+                    modifier = Modifier.fillMaxHeight()
                 )
             }
         }
+        Spacer(modifier = Modifier.height(16.dp))
     }
 }
 
 @Preview(
     showBackground = true,
+    heightDp = 300
 )
 @Composable
 private fun RecommendedGameListPreview() {
     GenericGameList(
         title = stringResource(id = R.string.popular_games),
         games = gamesDummy,
-        onClickItem = {})
+        onClickItem = {}
+    )
 }

@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -48,15 +47,19 @@ fun HomeScreen(
                         .fillMaxWidth()
                 )
             }
-            CategoryList(categories = Category.values().asList())
+            CategoryList(categories = Category.values().asList(), modifier = Modifier.weight(0.275f))
             RecommendedGameList(
                 title = stringResource(id = R.string.recommended_games),
                 games = uiState.recommendedGames,
-                onClickItem = { onClickGame(it) })
+                onClickItem = { onClickGame(it) },
+                modifier = Modifier.weight(0.45f)
+            )
             GenericGameList(
                 title = stringResource(id = R.string.popular_games),
                 games = uiState.popularGames,
-                onClickItem = { onClickGame(it) })
+                onClickItem = { onClickGame(it) },
+                modifier = Modifier.weight(0.275f)
+            )
         }
     }
 }
