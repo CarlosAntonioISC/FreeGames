@@ -14,6 +14,7 @@ import org.junit.Rule
 import org.junit.Test
 import tech.carlosktx.freegames.data.dummy.gameDetailDummy1
 import tech.carlosktx.freegames.domain.usescase.GetGameDetailUseCase
+import tech.carlosktx.freegames.domain.usescase.SaveGameAsFavoriteUseCase
 import tech.carlosktx.freegames.rules.CoroutinesTestRule
 import tech.carlosktx.freegames.ui.navigation.NavArg
 
@@ -26,8 +27,13 @@ class GameDetailViewModelTest {
     val mockkRule = MockKRule(this)
 
     private lateinit var gameDetailViewModel: GameDetailViewModel
+
     @MockK
     lateinit var gameDetailUseCase: GetGameDetailUseCase
+
+    @MockK
+    lateinit var saveGameAsFavoriteUseCase: SaveGameAsFavoriteUseCase
+
     @MockK
     lateinit var stateHandle: SavedStateHandle
     private val idGame = 1
@@ -35,7 +41,11 @@ class GameDetailViewModelTest {
     @Before
     fun setUp() {
         every { stateHandle.get<Int>(NavArg.ItemId.key) } returns idGame
-        gameDetailViewModel = GameDetailViewModel(gameDetailUseCase, stateHandle)
+        gameDetailViewModel = GameDetailViewModel(
+            gameDetailUseCase,
+            saveGameAsFavoriteUseCase,
+            stateHandle
+        )
     }
 
     @Test

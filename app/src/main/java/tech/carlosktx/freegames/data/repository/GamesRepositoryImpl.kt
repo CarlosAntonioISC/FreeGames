@@ -42,4 +42,8 @@ class GamesRepositoryImpl @Inject constructor(
         }
     }
 
+    override suspend fun saveGameAsFavorite(gameId: Int) {
+
+    }
+
 }

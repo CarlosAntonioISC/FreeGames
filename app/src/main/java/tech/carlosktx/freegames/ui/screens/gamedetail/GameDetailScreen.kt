@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import tech.carlosktx.freegames.data.dummy.gameDetailDummy1
 import tech.carlosktx.freegames.ui.common.BackIcon
 import tech.carlosktx.freegames.ui.common.FavoriteButton
 import tech.carlosktx.freegames.ui.screens.gamedetail.composables.DetailGameDescription
@@ -28,7 +29,8 @@ import tech.carlosktx.freegames.ui.theme.FreeGamesTheme
 @Composable
 fun GameDetailScreen(
     uiState: GameDetailUiState,
-    onClickIconBack: () -> Unit
+    onClickIconBack: () -> Unit,
+    onClickBtnFav: () -> Unit
 ) {
     val scrollState = rememberScrollState()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
@@ -45,7 +47,7 @@ fun GameDetailScreen(
                     BackIcon(onClickButton = { onClickIconBack() })
                 },
                 actions = {
-                    FavoriteButton(isFavorite = false, onClickButton = { })
+                    FavoriteButton(isFavorite = false, onClickButton = { onClickBtnFav() })
                 },
                 scrollBehavior = scrollBehavior,
             )
@@ -75,8 +77,8 @@ fun GameDetailScreenPreview() {
         Surface(
             modifier = Modifier.background(MaterialTheme.colorScheme.background)
         ) {
-            val uiState = GameDetailUiState(game = null)
-            GameDetailScreen(uiState = uiState) {}
+            val uiState = GameDetailUiState(game = gameDetailDummy1)
+            GameDetailScreen(uiState = uiState, onClickIconBack = {}, onClickBtnFav = {})
         }
     }
 }

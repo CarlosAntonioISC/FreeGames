@@ -9,12 +9,14 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import tech.carlosktx.freegames.domain.usescase.GetGameDetailUseCase
+import tech.carlosktx.freegames.domain.usescase.SaveGameAsFavoriteUseCase
 import tech.carlosktx.freegames.ui.navigation.NavArg
 import javax.inject.Inject
 
 @HiltViewModel
 class GameDetailViewModel @Inject constructor(
     private val getGameByIdUseCase: GetGameDetailUseCase,
+    private val saveGameAsFavoriteUseCase: SaveGameAsFavoriteUseCase,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -26,6 +28,10 @@ class GameDetailViewModel @Inject constructor(
         getGameByIdUseCase(idGame).collect { game ->
             _uiState.update { it.copy(game = game) }
         }
+    }
+
+    fun onClickedGameFavorite() = viewModelScope.launch {
+        saveGameAsFavoriteUseCase(idGame)
     }
 
 }

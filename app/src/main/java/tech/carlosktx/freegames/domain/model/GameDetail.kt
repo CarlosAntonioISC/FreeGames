@@ -1,6 +1,6 @@
 package tech.carlosktx.freegames.domain.model
 
-class GameDetail(
+data class GameDetail(
     val id: Int,
     val title: String,
     val thumbnail: String,
@@ -14,7 +14,8 @@ class GameDetail(
     val developer: String,
     val release_date: String,
     val minimumRequirements: MinimumRequirements?,
-    val screenshots: List<Screenshot>
+    val screenshots: List<Screenshot>,
+    val isFavorite: Boolean
 )
 
 data class MinimumRequirements(

@@ -24,7 +24,8 @@ val gameDetailDummy1 = GameDetail(
         graphics = "",
         storage = ""
     ),
-    screenshots = listOf()
+    screenshots = listOf(),
+    isFavorite = false
 )
 
 val gameDetailDummy2 = GameDetail(
@@ -47,7 +48,8 @@ val gameDetailDummy2 = GameDetail(
         graphics = "",
         storage = ""
     ),
-    screenshots = listOf()
+    screenshots = listOf(),
+    isFavorite = false
 )
 
 val gameDetailDummy3 = GameDetail(
@@ -70,5 +72,8 @@ val gameDetailDummy3 = GameDetail(
         graphics = "",
         storage = ""
     ),
-    screenshots = listOf()
+    screenshots = listOf(),
+    isFavorite = false
 )
+
+val gamesDetailDummy = listOf(gameDetailDummy1, gameDetailDummy2, gameDetailDummy3)

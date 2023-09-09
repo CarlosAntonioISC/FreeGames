@@ -22,7 +22,8 @@ fun GameDetailResponse.toGameModel(): GameDetail {
         developer = this.developer.orEmpty(),
         release_date = this.release_date.orEmpty(),
         minimumRequirements = this.minimumRequirements?.toMinimumRequirementsModel(),
-        screenshots = this.screenshots?.map { it.toScreenshotsModel() } ?: emptyList()
+        screenshots = this.screenshots?.map { it.toScreenshotsModel() } ?: emptyList(),
+        isFavorite = false
     )
 }
 

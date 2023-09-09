@@ -1,6 +1,7 @@
 package tech.carlosktx.freegames.ui.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavBackStackEntry
@@ -37,12 +38,14 @@ fun FreeGamesNavigation(navController: NavHostController) {
             }
             composable(NavCommand.ContentTypeDetail(Feature.GAME)) {
                 val viewModel: GameDetailViewModel = hiltViewModel()
+                LaunchedEffect(key1 = Unit, block = {
+                    viewModel.getGameById()
+                })
                 val uiState = viewModel.uiState.collectAsStateWithLifecycle()
                 GameDetailScreen(
                     uiState.value,
-                    onClickIconBack = {
-                        navController.popBackStack()
-                    }
+                    onClickIconBack = { navController.popBackStack() },
+                    onClickBtnFav = { viewModel.onClickedGameFavorite() }
                 )
             }
         }

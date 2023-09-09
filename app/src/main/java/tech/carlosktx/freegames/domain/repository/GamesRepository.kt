@@ -8,5 +8,5 @@ interface GamesRepository {
     fun getPopularGames(): Flow<List<Game>>
     fun getGamesById(gamesId: List<Int>): Flow<List<Game>>
     fun getGameDetail(gameId: Int): Flow<GameDetail>
-
+    suspend fun saveGameAsFavorite(gameId: Int)
 }

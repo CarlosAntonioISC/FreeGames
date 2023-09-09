@@ -37,11 +37,11 @@ fun DetailGameDescription(gameDetail: GameDetail) {
                 contentDescription = "",
                 modifier = Modifier.size(32.dp)
             )
-            TextCategory(gameDetail.category)
+            TextCategory(gameDetail.category, modifier = Modifier.padding(horizontal = 8.dp))
         }
         Text(
             text = "Game Description",
-            style = MaterialTheme.typography.headlineMedium,
+            style = MaterialTheme.typography.labelLarge,
             modifier = Modifier.padding(top = 24.dp, bottom = 16.dp)
         )
         Text(
