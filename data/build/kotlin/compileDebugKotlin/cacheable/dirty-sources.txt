@@ -1,0 +1,10 @@
+/Users/carlosantonio/Documents/COMPOSE/ACarlos/FreeGames/data/src/main/java/tech/carlosktx/freegames/remote/datasource/impl/GamesRetrofitRemoteDataSource.kt
+/Users/carlosantonio/Documents/COMPOSE/ACarlos/FreeGames/data/src/main/java/tech/carlosktx/freegames/remote/retrofit/response/GameResponse.kt
+/Users/carlosantonio/Documents/COMPOSE/ACarlos/FreeGames/data/src/main/java/tech/carlosktx/freegames/remote/datasource/GamesLocalDataSource.kt
+/Users/carlosantonio/Documents/COMPOSE/ACarlos/FreeGames/data/src/main/java/tech/carlosktx/freegames/remote/retrofit/response/GameDetailResponse.kt
+/Users/carlosantonio/Documents/COMPOSE/ACarlos/FreeGames/data/src/main/java/tech/carlosktx/freegames/remote/retrofit/api/GamesApi.kt
+/Users/carlosantonio/Documents/COMPOSE/ACarlos/FreeGames/data/src/main/java/tech/carlosktx/freegames/remote/mapper/GameMapper.kt
+/Users/carlosantonio/Documents/COMPOSE/ACarlos/FreeGames/data/src/main/java/tech/carlosktx/freegames/remote/mapper/GameDetailMapper.kt
+/Users/carlosantonio/Documents/COMPOSE/ACarlos/FreeGames/data/src/main/java/tech/carlosktx/freegames/remote/datasource/GamesRemoteDataSource.kt
+/Users/carlosantonio/Documents/COMPOSE/ACarlos/FreeGames/data/src/main/java/tech/carlosktx/freegames/remote/mapper/GenreMapper.kt
+/Users/carlosantonio/Documents/COMPOSE/ACarlos/FreeGames/data/src/main/java/tech/carlosktx/freegames/repository/GamesRepositoryImpl.kt

@@ -79,6 +79,15 @@ dependencies {
     implementation "androidx.compose.material:material-icons-extended"
     implementation "com.google.accompanist:accompanist-systemuicontroller:0.31.1-alpha"
 
+    def room_version = "2.5.0"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    // To use Kotlin annotation processing tool (kapt)
+    kapt "androidx.room:room-compiler:$room_version"
+
+
     //Testing
     testImplementation("io.mockk:mockk:1.13.3")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")

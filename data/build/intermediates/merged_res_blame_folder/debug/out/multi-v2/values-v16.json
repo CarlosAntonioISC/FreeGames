@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "tech.carlosktx.freegames.data-mergeDebugResources-2:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/Users/carlosantonio/Documents/Gradle/caches/transforms-3/52916f2acc981f020dac381f5a17e071/transformed/core-1.11.0-alpha01/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        }
+    ]
+}
