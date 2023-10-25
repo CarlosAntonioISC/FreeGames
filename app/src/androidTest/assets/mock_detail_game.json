@@ -1,0 +1,33 @@
+{
+  "id": 432,
+  "title": "Habbo",
+  "thumbnail": "https://www.freetogame.com/g/432/thumbnail.jpg",
+  "status": "Live",
+  "short_description": "One of the largest and most popular Social MMO.",
+  "description": "Of all the social MMOs out there, Habbo is easily one of the largest and most popular. Set in the titular Habbo Hotel, teenagers the world over can connect with one another with customized avatars that speak towards their personalities.\r\n\r\nPlayers in Habbo are encouraged to personalize their in-game avatars however they want, from the design of their faces to the color of their hair and even the clothes they wear. Habbo wants players to feel like they’re expressing themselves.\r\n\r\nHabboalso features countless mini-games and quests that not only give players more customization options, but also unlock in-game pieces of furniture and other items that players can then use to customize their hotel room in the game. In-game pets complete the scene and help players mark themselves as individuals.\r\n\r\nWith over 300 million avatars representing people from more than 150 nations around the globe, Habbo has shown since 2001 that players will always have the company of others in the in-game world.",
+  "game_url": "https://www.freetogame.com/open/habbo",
+  "genre": "Social",
+  "platform": "Web Browser",
+  "publisher": "Sulake Corporation",
+  "developer": "Sulake Corporation",
+  "release_date": "2001-09-26",
+  "freetogame_profile_url": "https://www.freetogame.com/habbo",
+  "screenshots": [
+    {
+      "id": 1068,
+      "image": "https://www.freetogame.com/g/432/habbo-1.jpg"
+    },
+    {
+      "id": 1069,
+      "image": "https://www.freetogame.com/g/432/habbo-2.jpg"
+    },
+    {
+      "id": 1070,
+      "image": "https://www.freetogame.com/g/432/habbo-3.jpg"
+    },
+    {
+      "id": 1071,
+      "image": "https://www.freetogame.com/g/432/habbo-4.jpg"
+    }
+  ]
+}
