@@ -18,7 +18,7 @@ import tech.carlosktx.freegames.ui.navigation.NavArg
 import javax.inject.Inject
 
 @HiltAndroidTest
-class GameDetailViewModelTest {
+class GameDetailViewModelIntegrationTest {
 
     @get:Rule(order = 0)
     val hiltRule = HiltAndroidRule(this)

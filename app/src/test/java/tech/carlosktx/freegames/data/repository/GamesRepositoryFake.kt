@@ -28,7 +28,8 @@ class GamesRepositoryFake(
     }
 
     override suspend fun getGameDetail(gameId: Int): GameDetail {
-        throw Exception()
+        return gamesDetailFlow.map { it.find { game -> game.id == gameId } ?: gameDetailDummy1 }
+            .first()
     }
 
     override suspend fun saveGameAsFavorite(gameId: Int) {
