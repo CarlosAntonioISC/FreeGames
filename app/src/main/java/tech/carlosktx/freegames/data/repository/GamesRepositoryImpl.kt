@@ -1,5 +1,6 @@
 package tech.carlosktx.freegames.data.repository
 
+import android.util.Log
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -15,13 +16,14 @@ import javax.inject.Inject
 
 class GamesRepositoryImpl @Inject constructor(
     private val remoteDataSource: GamesRemoteDataSource
-): GamesRepository {
+) : GamesRepository {
 
     override fun getPopularGames(): Flow<List<Game>> {
         return flow {
             emit(remoteDataSource.getPopularGames())
         }
     }
+
     override fun getGamesById(gamesId: List<Int>): Flow<List<Game>> {
         return flow {
             coroutineScope {
@@ -36,10 +38,8 @@ class GamesRepositoryImpl @Inject constructor(
         }
     }
 
-    override fun getGameDetail(gameId: Int): Flow<GameDetail> {
-        return flow {
-           emit(remoteDataSource.getGameById(gameId))
-        }
+    override suspend fun getGameDetail(gameId: Int): GameDetail {
+        return remoteDataSource.getGameById(gameId)
     }
 
     override suspend fun saveGameAsFavorite(gameId: Int) {

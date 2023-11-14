@@ -1,0 +1,33 @@
+{
+  "id": 432,
+  "title": "Habbo",
+  "thumbnail": "https://www.freetogame.com/g/432/thumbnail.jpg",
+  "status": "Live",
+  "short_description": "One of the largest and most popular Social MMO.",
+  "description": "Of all the social MMOs out there",
+  "game_url": "https://www.freetogame.com/open/habbo",
+  "genre": "Social",
+  "platform": "Web Browser",
+  "publisher": "Sulake Corporation",
+  "developer": "Sulake Corporation",
+  "release_date": "2001-09-26",
+  "freetogame_profile_url": "https://www.freetogame.com/habbo",
+  "screenshots": [
+    {
+      "id": 1068,
+      "image": "https://www.freetogame.com/g/432/habbo-1.jpg"
+    },
+    {
+      "id": 1069,
+      "image": "https://www.freetogame.com/g/432/habbo-2.jpg"
+    },
+    {
+      "id": 1070,
+      "image": "https://www.freetogame.com/g/432/habbo-3.jpg"
+    },
+    {
+      "id": 1071,
+      "image": "https://www.freetogame.com/g/432/habbo-4.jpg"
+    }
+  ]
+}

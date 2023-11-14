@@ -2,11 +2,11 @@ package tech.carlosktx.freegames.ui.screens.gamedetail
 
 import androidx.lifecycle.SavedStateHandle
 import app.cash.turbine.test
+import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.junit4.MockKRule
-import io.mockk.verify
-import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.*
 import org.junit.Before
@@ -53,7 +53,7 @@ class GameDetailViewModelTest {
 
         val expectedGameDetail = gameDetailDummy1
 
-        every { gameDetailUseCase.invoke(idGame) } returns flowOf(expectedGameDetail)
+        coEvery { gameDetailUseCase.invoke(idGame) } returns expectedGameDetail
 
         gameDetailViewModel.uiState.test {
             assertEquals(GameDetailUiState(), awaitItem())
@@ -61,7 +61,7 @@ class GameDetailViewModelTest {
             assertEquals(GameDetailUiState(game = expectedGameDetail), awaitItem())
         }
 
-        verify(exactly = 1) { gameDetailUseCase(idGame) }
+        coVerify(exactly = 1) { gameDetailUseCase.invoke(idGame) }
 
     }
 

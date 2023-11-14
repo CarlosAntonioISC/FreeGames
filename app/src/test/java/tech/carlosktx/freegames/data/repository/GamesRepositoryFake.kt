@@ -27,8 +27,8 @@ class GamesRepositoryFake(
         return gamesStateFlow.onEach { it.filter { game -> gamesId.contains(game.id) } }
     }
 
-    override fun getGameDetail(gameId: Int): Flow<GameDetail> {
-        return gamesDetailFlow.map { it.find { game -> game.id == gameId } ?: gameDetailDummy1 }
+    override suspend fun getGameDetail(gameId: Int): GameDetail {
+        throw Exception()
     }
 
     override suspend fun saveGameAsFavorite(gameId: Int) {

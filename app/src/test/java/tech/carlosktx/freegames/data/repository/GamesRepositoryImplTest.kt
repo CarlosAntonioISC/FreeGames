@@ -65,7 +65,7 @@ class GamesRepositoryImplTest {
     fun whenGameDetailIsRequestedItsRetrievedFromRemoteDataSource() {
         val gameId = 1
         coJustRun { gamesRemoteDataSource.getGameById(gameId) }
-        runBlocking { gamesRepository.getGameDetail(gameId).first() }
+        runBlocking { gamesRepository.getGameDetail(gameId) }
         coVerify { gamesRemoteDataSource.getGameById(gameId) }
     }
 }

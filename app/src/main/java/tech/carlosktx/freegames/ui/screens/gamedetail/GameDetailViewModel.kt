@@ -25,9 +25,8 @@ class GameDetailViewModel @Inject constructor(
     private val idGame = savedStateHandle.get<Int>(NavArg.ItemId.key) ?: 0
 
     fun getGameById() = viewModelScope.launch {
-        getGameByIdUseCase(idGame).collect { game ->
-            _uiState.update { it.copy(game = game) }
-        }
+        val game = getGameByIdUseCase(idGame)
+        _uiState.update { it.copy(game = game) }
     }
 
     fun onClickedGameFavorite() = viewModelScope.launch {

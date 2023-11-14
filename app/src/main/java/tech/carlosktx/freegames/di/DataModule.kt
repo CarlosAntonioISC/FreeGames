@@ -18,14 +18,14 @@ object DataModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(): Retrofit {
+    fun provideRetrofit(@ApiUrl url: String): Retrofit {
 
         val interceptor = HttpLoggingInterceptor()
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         val client: OkHttpClient = OkHttpClient.Builder().addInterceptor(interceptor).build()
 
         return Retrofit.Builder()
-            .baseUrl("https://www.freetogame.com/api/")
+            .baseUrl(url)
             .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
